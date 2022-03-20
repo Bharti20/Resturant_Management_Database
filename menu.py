@@ -5,15 +5,15 @@ myaccess = connection.cursor()
 
 # Add food item 
 # sql = 'INSERT INTO menu (item_id, item_name, price, categ_id) VALUES (%s, %s,%s,%s)'
-# val = (14, 'rasmali', 80, 4)
+# val = (14, 'rasmalai', 80, 4)
 # myaccess.execute(sql, val)
 # connection.commit()
 
 # show all items 
-# myaccess.execute('Select * from menu')
-# allData = myaccess.fetchall()
-# for raw in allData:
-#     print(raw)
+myaccess.execute('Select * from menu')
+allData = myaccess.fetchall()
+for raw in allData:
+    print(raw)
 
 
 # update menu

@@ -10,10 +10,10 @@ myaccess = connection.cursor()
 # connection.commit()
 
 # show all orders 
-# myaccess.execute('Select * from orders')
-# allData = myaccess.fetchall()
-# for raw in allData:
-#     print(raw)
+myaccess.execute('Select * from orders')
+allData = myaccess.fetchall()
+for raw in allData:
+    print(raw)
 
 
 # Update oders
@@ -30,10 +30,12 @@ myaccess = connection.cursor()
 
 
 # show data with customer name
+# sql = 'select  orders.customer_id, customer_details.cus_name, orders.total_price from orders inner join customer_details on customer_details.cus_id = orders.customer_id'
+# myaccess.execute(sql)
+# allData = myaccess.fetchall()
+# for i in allData:
+#     print(i)
 
-sql = 'select  orders.customer_id, customer_details.cus_name from orders inner join customer_details on customer_details.cus_id = orders.customer_id'
 
-myaccess.execute(sql)
-allData = myaccess.fetchall()
-for i in allData:
-    print(i)
+
+

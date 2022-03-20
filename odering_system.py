@@ -10,16 +10,16 @@ myaccess = connection.cursor()
 # connection.commit()
 
 # show all items 
-# myaccess.execute('Select * from odering_system')
-# allData = myaccess.fetchall()
-# for raw in allData:
-#     print(raw)
+myaccess.execute('Select * from odering_system')
+allData = myaccess.fetchall()
+for raw in allData:
+    print(raw)
 
 #update system 
-sql = 'update odering_system SET oder_sys_name = "offline" where oder_sys_id = 1'
-myaccess.execute(sql)
-connection.commit()
-print('data updated')
+# sql = 'update odering_system SET oder_sys_name = "offline" where oder_sys_id = 1'
+# myaccess.execute(sql)
+# connection.commit()
+# print('data updated')
 
 
 # Delete item   

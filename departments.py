@@ -12,10 +12,10 @@ myaccess = connection.cursor()
 # print('Department added')
 
 #show all departments
-# myaccess.execute('select * from Departments')
-# data = myaccess.fetchall()
-# for raw in data:
-#     print(raw)
+myaccess.execute('select * from Departments')
+data = myaccess.fetchall()
+for raw in data:
+    print(raw)
 
 # update a department name
 # sql = 'update Departments SET dept_name = "Managerial Staff" where dept_id = 1'
