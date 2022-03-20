@@ -1,6 +1,7 @@
+from multiprocessing import connection
 import mysql.connector
 
-dbConnecion = mysql.connector.connect(
+connection = mysql.connector.connect(
     host = 'localhost',
     user = 'root',
     password = 'Mysql@12345',
@@ -8,9 +9,17 @@ dbConnecion = mysql.connector.connect(
     database = 'resturant'
 )
 
-myaccess = dbConnecion.cursor()
+myaccess = connection.cursor()
 
-# myaccess.execute('CREATE DATABASE resturant')    #Creating database
+# myaccess.execute('CREATE DATABASE resturant')   #Creating database
+
+# Show all tables
+# myaccess.execute('Show tables')
+# allTables = myaccess.fetchall()
+# for table in allTables:
+#     print(table)
+
+
 
 #creating tables
 # myaccess.execute('CREATE TABLE Departments (dept_id int PRIMARY KEY, dept_name varchar(50) not null)')
@@ -19,9 +28,11 @@ myaccess = dbConnecion.cursor()
 # myaccess.execute('CREATE TABLE menu (item_id int, item_name varchar(50), price int, categ_id int)')
 # myaccess.execute('CREATE TABLE customer_details(cus_id int primary key, cus_name varchar(50), phone varchar(20), address varchar(255))')
 # myaccess.execute('CREATE TABLE odering_system (oder_sys_id int, oder_sys_name varchar(50))')
-# myaccess.execute('CREATE TABLE oders (oder_id int, food_id int, item_quantity int, total_price int, oder_sys_id int)')
+# myaccess.execute('CREATE TABLE orders (oder_id int, food_id int, item_quantity int, total_price int, oder_sys_id int)')
 
-#Data insert 
+#Data insert
+
+#Add Department
 # sql = 'INSERT INTO Departments (dept_id, dept_name) VALUES (%s, %s)'
 # val = [(1753, 'Kitchen Staff'), (1, 'Managerial Staff'), (2, 'Floor Staff'), (3,'Bar Tenders'), (4, 'Delivery Staff')]
 # myaccess.executemany(sql, val)
@@ -42,7 +53,6 @@ myaccess = dbConnecion.cursor()
 # myaccess.executemany(sql, val)
 # dbConnecion.commit()
 
-
 # sql = 'INSERT INTO customer_details (cus_id, cus_name, phone, address) VALUES (%s, %s,%s,%s)'
 # val = [(1, 'Sonam', '8976345212', 'citypark, Pune'),(2, 'Ankur', '9876456621', 'Gurgaon,Haryana'),(3, 'Nilesh', '1567890322', 'purnea,Bihar'),(4, 'Pravin', '7065443789', 'Kishanganj,Bihar'),(5, 'Ravina', '878956789','Ahmadabad'),(6, 'Sarmistha', '985345678', 'Kolkata'),(8, 'Kritika', '6045678922', 'delhi')]
 # myaccess.executemany(sql, val)
@@ -53,10 +63,16 @@ myaccess = dbConnecion.cursor()
 # myaccess.executemany(sql, val)
 # dbConnecion.commit()
 
-# sql = 'INSERT INTO oders (oder_id, food_id, item_quantity,total_price, oder_sys_id) VALUES (%s, %s,%s, %s,%s)'
-# val = (3, 14,2, 160, 2 )
+# sql = 'INSERT INTO orders (customer_id, food_id, item_quantity,total_price, oder_sys_id) VALUES (%s, %s,%s, %s,%s)'
+# val = (4, 13,2, 120, 2 )
 # myaccess.execute(sql, val)
 # dbConnecion.commit()
+
+
+
+
+
+
 
 
 
