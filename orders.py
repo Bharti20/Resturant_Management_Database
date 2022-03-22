@@ -1,7 +1,7 @@
 from dbconnection import connection
 myaccess = connection.cursor()
 
-# myaccess.execute('CREATE TABLE orders (customer_id int, food_id int, item_quantity int, total_price int, oder_sys_id int)')
+# myaccess.execute('CREATE TABLE if not exists orders (customer_id int, food_id int, item_quantity int, total_price int, oder_sys_id int)')
 
 #Add order
 # sql = 'INSERT INTO orders (customer_id, food_id, item_quantity,total_price, oder_sys_id) VALUES (%s, %s,%s, %s,%s)'

@@ -1,7 +1,7 @@
 from dbconnection import connection
 myaccess = connection.cursor()
 
-# myaccess.execute('CREATE TABLE menu (item_id int primary key, item_name varchar(50), price int, categ_id int)')
+# myaccess.execute('CREATE TABLE if not exists menu (item_id int primary key, item_name varchar(50), price int, categ_id int)')
 
 # Add food item 
 # sql = 'INSERT INTO menu (item_id, item_name, price, categ_id) VALUES (%s, %s,%s,%s)'

@@ -11,7 +11,7 @@ connection = mysql.connector.connect(
 
 myaccess = connection.cursor()
 
-# myaccess.execute('CREATE DATABASE resturant')   #Creating database
+myaccess.execute('CREATE DATABASE if not exists resturant')   #Creating database
 
 #Show all tables
 # myaccess.execute('Show tables')

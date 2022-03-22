@@ -2,7 +2,7 @@ from dbconnection import connection
 myaccess = connection.cursor()
 
 # creating table 
-# myaccess.execute('CREATE TABLE reports (rep_id int, item_name varchar(30), item_type varchar(20), massage varchar(255))')
+# myaccess.execute('CREATE TABLE if not exists reports (rep_id int, item_name varchar(30), item_type varchar(20), massage varchar(255))')
 
 
 # add report 

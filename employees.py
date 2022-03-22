@@ -2,7 +2,7 @@ from dbconnection import connection
 myaccess = connection.cursor()
 
 # Creating table
-# myaccess.execute('CREATE TABLE Employees (emp_id int PRIMARY KEY, emp_name varchar(50) not null, dept_id int, address varchar(255), phone varchar(255) not null, parent_name varchar(50), spouse varchar(50))')
+# myaccess.execute('CREATE TABLE if not exists Employees (emp_id int PRIMARY KEY, emp_name varchar(50) not null, dept_id int, address varchar(255), phone varchar(255) not null, parent_name varchar(50), spouse varchar(50))')
 
 # Add data 
 # sql = 'INSERT INTO Employees (emp_id,emp_name,dept_id,address,phone,parent_name,spouse) VALUES (%s, %s,%s,%s,%s,%s,%s)'

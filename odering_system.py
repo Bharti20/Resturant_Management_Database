@@ -1,7 +1,7 @@
 from dbconnection import connection
 myaccess = connection.cursor()
 
-# myaccess.execute('CREATE TABLE odering_system (oder_sys_id int, oder_sys_name varchar(50))')
+# myaccess.execute('CREATE TABLE if not exists odering_system (oder_sys_id int, oder_sys_name varchar(50))')
 
 # Add more option
 # sql = 'INSERT INTO odering_system (oder_sys_id, oder_sys_name) VALUES (%s, %s)'
